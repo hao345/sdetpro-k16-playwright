@@ -5,3 +5,5 @@ console.log(a);
 
 const b = 3;
 console (`Total ${a+b}`)
+
+const c = a +b
