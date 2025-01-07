@@ -1,0 +1,1 @@
+const {isEvenNumber,isOddNumber} = require ('./UtilMethods.js')
