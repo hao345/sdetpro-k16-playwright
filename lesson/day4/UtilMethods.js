@@ -1,9 +1,9 @@
 //support function: use for local file
 //3: argument
-let result = isEvenNumber(3)
+/* let result = isEvenNumber(3)
 console.log(result);
 let result1 = isOddNumber(3)
-console.log(result1);
+console.log(result1); */
 
 // number: param
 function isEvenNumber(number){
