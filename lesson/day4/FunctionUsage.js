@@ -1,1 +1,1 @@
-const {isEvenNumber,isOddNumber} = require ('./UtilMethods.js')
+const {isEvenNumber,isOddNumber} = require ('./UtilMethods')
