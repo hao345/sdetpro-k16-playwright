@@ -5,9 +5,9 @@ let max = intArr[0];
 
 intArr.forEach(function(element){
     if (element>max){
-        max = element
+        max = element;
     }if (element<min){
-        min = element
+        min = element;
     }
 })
 
