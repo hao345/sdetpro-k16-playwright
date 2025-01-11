@@ -1,4 +1,4 @@
-module.exports = { isEvenNumber, isOddNumber, input , sort}
+module.exports = { isEvenNumber, isOddNumber, input, sort}
 const readline = require('readline-sync')
 
 function isEvenNumber(number) {
