@@ -23,6 +23,7 @@ console.log(person2)
 person3.name = "Haooo" */
 
 //Shallow copy handle for nested object
+//Key is function can't handle
 let person4 = JSON.parse(JSON.stringify(person));
 person4.name = "Haooo"
 person4.bankAccount.accountNumber = '0987';
