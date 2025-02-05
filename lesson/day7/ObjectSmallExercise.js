@@ -2,7 +2,7 @@ const person = {
     name: "Hao",
     grades: [9, 8, 6]
 };
-
+//Data
 const person2 = JSON.parse(JSON.stringify(person))
 person2.name = 'Haoo'
 person2.grades = [7, 9, 9]
@@ -15,10 +15,12 @@ const person4 = JSON.parse(JSON.stringify(person))
 person3.name = 'Haooo'
 person3.grades = [10, 9, 8]
 
+//Usage
 const bestStudentInfo = theBest([person, person2, person3, person4])
 const { bestStudent, currentHighScore } = bestStudentInfo
 console.log(`The best is ${JSON.stringify(bestStudent)} with averageScorec is ${currentHighScore}`)
 
+//Controller
 function theBest(students) {
     let bestStudent = students[0];
     let currentHighScore = 0;
