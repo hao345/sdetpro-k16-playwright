@@ -1,5 +1,5 @@
 //Brute Force
-/*
+
 function findIndicesUsingBruteFore(arr, targetNumber) {
     for (let firstNumIndex = 0; firstNumIndex < arr.length - 1; firstNumIndex++) {
         let firstNumber = arr[firstNumIndex];
@@ -12,8 +12,8 @@ function findIndicesUsingBruteFore(arr, targetNumber) {
         }
     }
     return []
-    console.log(findIndicesUsingBruteFore([3, 7, 22, 1], 10))
-}*/
+}
+console.log(findIndicesUsingBruteFore([3, 7, 22, 1], 10))
 
 
 //Map
