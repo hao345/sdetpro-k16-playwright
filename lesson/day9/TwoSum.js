@@ -1,13 +1,12 @@
 //Brute Force
-
 function findIndicesUsingBruteFore(arr, targetNumber) {
     for (let firstNumIndex = 0; firstNumIndex < arr.length - 1; firstNumIndex++) {
         let firstNumber = arr[firstNumIndex];
-        for (let secondNumIndex = firstNumIndex + 1; secondNumIndex < arr.length-1; secondNumIndex++) {
+        for (let secondNumIndex = firstNumIndex + 1; secondNumIndex < arr.length - 1; secondNumIndex++) {
             let secondNumber = arr[secondNumIndex];
             if (firstNumber + secondNumber === targetNumber) {
                 //return [firstNumIndex, secondNumIndex] // return a index of number 
-                return [firstNumber,secondNumber] //return a number
+                return [firstNumber, secondNumber] //return a number
             }
         }
     }
@@ -22,10 +21,10 @@ function findIndicesUsingMap(arr, targetNumber) {
     for (let currenIndex = 0; currenIndex < arr.length; currenIndex++) {
         let currentNumber = arr[currenIndex];
         const lookingNumber = targetNumber - currentNumber;
-        if (numMap.has(lookingNumber)){
+        if (numMap.has(lookingNumber)) {
             return [numMap.get(lookingNumber), currenIndex]
         }
-        numMap.set(currentNumber,currenIndex)
+        numMap.set(currentNumber, currenIndex)
     }
     return []
 }
