@@ -2,7 +2,6 @@ const readline = require("readline-sync");
 
 let givenStr =  userInput();
 let rawWord = givenStr.replace(/[,.]/gi, '').split(/\s+/);
-console.log(rawWord)
 const groupWords = groupWord(rawWord);
 console.log(groupWords)
 
