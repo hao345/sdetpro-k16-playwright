@@ -32,3 +32,11 @@ console.log(Number(uiNum) + 1)
 let firstStr = 'Hello'
 let secondStr = 'Heo'
 console.log(firstStr.concat(' ').concat(secondStr).concat(' !'))
+
+//SubString
+let strToBeCut = 'https://sdetpro.com';
+console.log(strToBeCut.substring(0,5));
+
+//Split
+console.log(strToBeCut.split(''))
+console.log(strToBeCut.split('://'))

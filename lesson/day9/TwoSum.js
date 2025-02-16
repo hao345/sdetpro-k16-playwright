@@ -2,7 +2,7 @@
 function findIndicesUsingBruteFore(arr, targetNumber) {
     for (let firstNumIndex = 0; firstNumIndex < arr.length - 1; firstNumIndex++) {
         let firstNumber = arr[firstNumIndex];
-        for (let secondNumIndex = firstNumIndex + 1; secondNumIndex < arr.length - 1; secondNumIndex++) {
+        for (let secondNumIndex = firstNumIndex + 1; secondNumIndex < arr.length; secondNumIndex++) {
             let secondNumber = arr[secondNumIndex];
             if (firstNumber + secondNumber === targetNumber) {
                 //return [firstNumIndex, secondNumIndex] // return a index of number 
@@ -12,7 +12,7 @@ function findIndicesUsingBruteFore(arr, targetNumber) {
     }
     return []
 }
-console.log(findIndicesUsingBruteFore([3, 7, 22, 1], 10))
+console.log(findIndicesUsingBruteFore([2, 22, 5, 1, 7], 8))
 
 
 //Map
