@@ -6,9 +6,9 @@
 
 const url = 'google.com'
 
-// Callback hell
-sendRequest(url, function(response){
-    processResponse(response,function(statsCode){
+// Callback hell    
+sendRequest(url, function (response) {
+    processResponse(response, function (statsCode) {
         validateResponse(statsCode)
         console.log('Done')
     })
@@ -31,11 +31,11 @@ function processResponse(response, callBackFunc) {
 }
 
 //Mimic SyncChoronus
-function validateResponse(responseStatus){
+function validateResponse(responseStatus) {
     console.log(`3.Validate the response... `)
-    if(responseStatus === 200){
+    if (responseStatus === 200) {
         console.log('PASSED!')
-    }else{
+    } else {
         console.log('ERROR!')
     }
 }
