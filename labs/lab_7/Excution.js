@@ -3,10 +3,10 @@ const Post = require("./Post");
 const RequestHandler = require("./RequestHandler");
 
 // Excution
-lab11();
+lab7();
 
 // Function Declaration
-async function lab11() {
+async function lab7() {
     // Given params
     const userId = 1;
     const postId = 5;
