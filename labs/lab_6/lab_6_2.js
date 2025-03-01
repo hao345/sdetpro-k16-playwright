@@ -1,32 +1,30 @@
 const readline = require('readline-sync');
 
-const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
+const postEndpoint = 'https://jsonplaceholder.typicode.com/posts';
 
 main();
 
-function main() {
-    getData()
-        .then(function (posts) {
-            let isInteracting = true;
-            while (isInteracting) {
-                showMenu();
-                const userOption = getUserOption();
-                switch (userOption) {
-                    case 1:
-                        getPostContent(posts);
-                        break;
-                    case 2:
-                        getRelatedPosts(posts);
-                        break;
-                    case 0:
-                        isInteracting = false;
-                        console.log("Goodbye!");
-                        break;
-                    default:
-                        console.log("Wrong option! Please try again.\n");
-                }
-            }
-        })
+async function main() {
+    const posts = await getData();
+    let isInteracting = true;
+    while (isInteracting) {
+        showMenu();
+        const userOption = getUserOption();
+        switch (userOption) {
+            case 1:
+                getPostContent(posts);
+                break;
+            case 2:
+                getRelatedPosts(posts);
+                break;
+            case 0:
+                isInteracting = false;
+                console.log("Goodbye!");
+                break;
+            default:
+                console.log("Wrong option! Please try again.\n");
+        }
+    }
 }
 
 function showMenu() {
@@ -42,14 +40,12 @@ function getUserOption() {
     return Number(readline.question('Please select an option: '));
 }
 
-function getData() {
-    return fetch(API_ENDPOINT)
-        .then(function (response) {
-            if (!response.ok) {
-                return Promise.reject("HTTP error! Status: " + response.status);
-            }
-            return response.json();
-        });
+async function getData() {
+    const response = await fetch(postEndpoint);
+    if (!response.ok) {
+        throw new Error("HTTP error! Status: " + response.status);
+    }
+    return await response.json();
 }
 
 function getPostContent(posts) {
@@ -57,7 +53,7 @@ function getPostContent(posts) {
     const postId = Number(readline.question('Please enter post id: '));
     const post = posts.find(function (post) {
         return post.userId === userId && post.id === postId;
-    });
+    })
     if (!post) {
         console.log("Post not found!");
     } else {

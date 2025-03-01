@@ -18,8 +18,13 @@ class RequestHandler {
 
     async printAllPosts(userId) {
         // Construct the returned data as a [ Post data model ] from class Post
+        const allPosts = [];
         const posts = await this._getAllPosts(userId);
-        return posts;
+        for (let post of posts) {
+            const { userId, id, title, body } = post;
+            allPosts.push(new Post(userId, id, title, body));
+        }
+        return allPosts;
     }
 
     async printTargetPost(userId, postId) {
@@ -29,11 +34,11 @@ class RequestHandler {
             return post.id === postId;
         })
         if (post) {
-            return { [post.id]: post }
+            const { userId, id, title, body } = post;
+            return new Post(userId, id, title, body)
         } else {
-            return {}
+            return new Post();
         }
     }
 }
-
 module.exports = RequestHandler;
