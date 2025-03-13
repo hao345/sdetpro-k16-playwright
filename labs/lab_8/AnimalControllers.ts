@@ -2,12 +2,12 @@ import Animal from "./Animal";
 
 export default class AnimalControllers {
     static compareSpeed(listAnimal: Animal[]): Animal {
-        let max = listAnimal[0];
+        let fastest = listAnimal[0];
         for (let element of listAnimal){
-            if (element.getSpeed() > max.getSpeed()){
-                max = element;
+            if (element.getSpeed() > fastest.getSpeed()){
+                fastest = element;
             }
         }
-        return max;
+        return fastest;
     }
 }
