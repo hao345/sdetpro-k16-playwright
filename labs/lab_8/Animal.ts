@@ -1,23 +1,17 @@
 export default class Animal {
-    protected name: string;
-    protected speed: number;
-    protected maxSpeed: number;
+    private name: string;
+    private speed: number;
 
     constructor(name: string, maxSpeed: number) {
         this.name = name;
-        this.maxSpeed = maxSpeed;
-        this.speed = Math.floor(Math.random() * 100) + 1;
+        this.speed = Math.floor(Math.random() * maxSpeed) + 1;
     }
 
-    getName(): string {
+    public getName(): string {
         return this.name;
     }
 
-    getMaxSpeed(): number {
-        return this.maxSpeed;
-    }
-
-    getSpeed(): number {
+    public getSpeed(): number {
         return this.speed;
     }
 }
