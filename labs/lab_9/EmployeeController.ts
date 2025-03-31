@@ -13,7 +13,7 @@ export default class EmployeeController {
 
     //Employee with the highest salary
     static findHighestSalaryEmployee(listEmployee: Employee[]): Employee | null {
-        let highestSalaryEmployee = listEmployee[0];  // Khởi tạo nhân viên có lương cao nhất là nhân viên đầu tiên
+        let highestSalaryEmployee = listEmployee[0]; 
 
         for (let employee of listEmployee) {
             employee.getSalary();
